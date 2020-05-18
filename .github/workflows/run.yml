@@ -1,0 +1,10 @@
+name: Run
+on:
+  push:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: node index.js hola
