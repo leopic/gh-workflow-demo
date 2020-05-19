@@ -1,0 +1,14 @@
+name: Pull Request Checking Cron
+
+on: [pull_request]
+
+jobs:
+  check:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Open Pull Requests Notifier
+        uses: leopic/gh-action-open-pr-notifier@v1.0.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          slackbot-token: ${{ secrets.SLACK_BOT_TOKEN }}
+          slack-conversation-id: ${{ secrets.SLACK_CHANNEL_ID }}
